@@ -1,0 +1,12 @@
+{{ $params := . }}
+
+{{ $color := $params.color }}
+{{ $colorscheme := $params.color_scheme }}
+
+{{ if and (not (eq $colorscheme "dark")) (not (eq $colorscheme "light")) }}
+    $color-mode-type: media-query;
+{{ end }}
+
+$primary: {{ $color }};
+
+@import "bootstrap";
