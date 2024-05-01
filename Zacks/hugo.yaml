@@ -1,0 +1,115 @@
+theme: paige
+baseurl: https://example.com
+copyright: © Will Faught
+enablerobotstxt: yes
+languagecode: en-us
+paginate: 50
+timezone: America/Los_Angeles
+titlecasestyle: Go
+languages:
+  en:
+    menu:
+      main:
+        - identifier: home
+          name: Home
+          url: /
+          weight: 10
+        - identifier: content
+          name: Content
+          url: /content/
+          weight: 20
+        - identifier: layouts
+          name: Layouts
+          url: /layouts/
+          weight: 30
+        - identifier: shortcodes
+          name: Shortcodes
+          url: /shortcodes/
+          weight: 40
+        - identifier: customization
+          name: Customization
+          url: /customization/
+          weight: 50
+        - identifier: authors
+          name: Authors
+          url: /authors/
+          weight: 60
+        - identifier: series
+          name: Series
+          url: /series/
+          weight: 70
+        - identifier: categories
+          name: Categories
+          url: /categories/
+          weight: 80
+        - identifier: tags
+          name: Tags
+          url: /tags/
+          weight: 90
+        - identifier: search
+          name: Search
+          url: /search/
+          weight: 100
+    title: Paige
+    weight: 10
+markup:
+  goldmark:
+    renderer:
+      unsafe: yes
+  highlight:
+    noclasses: no
+  tableofcontents:
+    endlevel: 6
+    ordered: yes
+    startlevel: 2
+module:
+  imports:
+    - path: github.com/willfaught/paige
+outputs:
+  home:
+    - atom
+    - html
+    - paige-search
+    - rss
+  section:
+    - atom
+    - html
+    - rss
+  taxonomy:
+    - atom
+    - html
+    - rss
+  term:
+    - atom
+    - html
+    - rss
+params:
+  authors:
+    will-faught:
+      default: yes
+      email: will.faught@example.com
+      name: Will Faught
+      url: https://willfaught.com/paige
+  paige:
+    feed:
+      atom:
+        authors:
+          - email: will.faught@example.com
+            name: Will Faught
+            url: https://willfaught.com/paige
+      rss:
+        managing_editor: will.faught@example.com (Will Faught)
+        web_master: will.faught@example.com (Will Faught)
+    file_link:
+      content: Edit this page
+      disable: yes
+      url: https://github.com/willfaught/paige/edit/master/exampleSite/content/%s
+    git:
+      commit_url: https://github.com/willfaught/paige/commit/%s
+    site_description: Powerful, pliable pixel perfection
+    site_title: Paige
+taxonomies:
+  author: authors
+  category: categories
+  series: series
+  tag: tags
